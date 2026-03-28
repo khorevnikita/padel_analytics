@@ -108,14 +108,13 @@ if __name__ == "__main__":
     polygon_zone = sv.PolygonZone(
         np.concatenate(
             (
-                np.expand_dims(keypoints_array[0], axis=0), 
-                np.expand_dims(keypoints_array[1], axis=0), 
-                np.expand_dims(keypoints_array[-1], axis=0), 
+                np.expand_dims(keypoints_array[0], axis=0),
+                np.expand_dims(keypoints_array[1], axis=0),
+                np.expand_dims(keypoints_array[-1], axis=0),
                 np.expand_dims(keypoints_array[-2], axis=0),
             ),
             axis=0
         ),
-        frame_resolution_wh=video_info.resolution_wh,
     )
 
 
