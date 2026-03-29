@@ -178,14 +178,13 @@ if upload_video or st.session_state["video"] is not None:
             polygon_zone = sv.PolygonZone(
                 np.concatenate(
                     (
-                        np.expand_dims(keypoints_array[0], axis=0), 
-                        np.expand_dims(keypoints_array[1], axis=0), 
-                        np.expand_dims(keypoints_array[-1], axis=0), 
+                        np.expand_dims(keypoints_array[0], axis=0),
+                        np.expand_dims(keypoints_array[1], axis=0),
+                        np.expand_dims(keypoints_array[-1], axis=0),
                         np.expand_dims(keypoints_array[-2], axis=0),
                     ),
                     axis=0
                 ),
-                frame_resolution_wh=video_info.resolution_wh,
             )
 
             # Instantiate trackers
@@ -263,7 +262,7 @@ if upload_video or st.session_state["video"] is not None:
         st.header("Collected data")
         st.write("First 5 rows")
         st.dataframe(st.session_state["df"].head())
-        st.markdown(f"- Number of rows: {len(st.session_state["df"])}")
+        st.markdown(f"- Number of rows: {len(st.session_state['df'])}")
         # st.write("- Columns: ")
         # st.write(st.session_state["df"].columns)
 

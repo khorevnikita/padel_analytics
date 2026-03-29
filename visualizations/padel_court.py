@@ -2,7 +2,7 @@ import io
 from PIL import Image
 import numpy as np
 import plotly.graph_objects as go
-import  moviepy.editor as mpy
+from moviepy import VideoClip
 
 
 def padel_court_2d(
@@ -179,6 +179,6 @@ def make_frame(t):
     fig.update_traces(z=z, intensity=z)  #These are the updates that usually are performed within Plotly go.Frame definition
     return plotly_fig2array(fig)
 
-animation = mpy.VideoClip(make_frame, duration=2)
+animation = VideoClip(make_frame, duration=2)
 animation.write_gif("image/my_hat.gif", fps=20)
 """
